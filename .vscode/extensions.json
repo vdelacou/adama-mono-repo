@@ -1,0 +1,21 @@
+{
+    "recommendations": [
+      "blanu.vscode-styled-jsx",
+      "bradlc.vscode-tailwindcss",
+      "csstools.postcss",
+      "dbaeumer.vscode-eslint",
+      "eamodio.gitlens",
+      "esbenp.prettier-vscode",
+      "github.copilot-labs",
+      "github.copilot",
+      "henriiik.vscode-sort",
+      "kisstkondoros.vscode-codemetrics",
+      "lacroixdavid1.vscode-format-context-menu",
+      "mikestead.dotenv",
+      "snyk-security.snyk-vulnerability-scanner",
+      "sonarsource.sonarlint-vscode",
+      "usernamehw.errorlens",
+      "vivaxy.vscode-conventional-commits"
+    ]
+  }
+  

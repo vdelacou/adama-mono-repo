@@ -1,0 +1,1 @@
+import "@adama/components-app-ui/dist/index.css";
