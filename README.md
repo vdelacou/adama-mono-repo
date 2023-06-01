@@ -1,4 +1,4 @@
-# Turborepo Design System Starter
+# ADAMA Mono Repo
 
 This guide explains how to use a React design system starter powered by:
 
@@ -14,8 +14,11 @@ As well as a few others tools preconfigured:
 - [Prettier](https://prettier.io) for code formatting
 - [Changesets](https://github.com/changesets/changesets) for managing versioning and changelogs
 - [GitHub Actions](https://github.com/changesets/action) for fully automated package publishing
+- [Vercel]() Deploy each apps in vercel
 
-## Using this example
+## Start Locally
+
+D
 
 Run the following command:
 

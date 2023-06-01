@@ -1,8 +1,7 @@
 {
   "name": "@adama/tsconfig",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
-  "license": "MIT",
   "scripts": {
     "update-dependencies": "pnpx npm-check-updates@latest -u"
   },
