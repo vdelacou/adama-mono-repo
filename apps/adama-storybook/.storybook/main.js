@@ -1,27 +1,25 @@
 const path = require("path");
-
 module.exports = {
   stories: ["../stories/**/*.stories.mdx", "../stories/**/*.stories.tsx"],
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
-  framework: "@storybook/react",
-  core: {
-    builder: "@storybook/builder-vite",
+  framework: {
+    name: "@storybook/react-vite",
+    options: {}
   },
-  async viteFinal(config, { configType }) {
+  async viteFinal(config) {
     // customize the Vite config here
     return {
       ...config,
+      define: { 'process.env': {} },
       resolve: {
-        alias: [
-          {
-            find: "@adama/components-app-ui",
-            replacement: path.resolve(
-              __dirname,
-              "../../../packages/adama-components/app-ui"
-            ),
-          },
-        ],
-      },
+        alias: [{
+          find: "@adama/components-app-ui",
+          replacement: path.resolve(__dirname, "../../../packages/adama-components/app-ui")
+        }]
+      }
     };
   },
+  docs: {
+    autodocs: true
+  }
 };

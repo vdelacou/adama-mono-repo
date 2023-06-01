@@ -7,10 +7,10 @@
     "update-dependencies": "pnpx npm-check-updates@latest -u"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.59.7",
-    "eslint-config-next": "^13.4.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "eslint-config-next": "^13.4.4",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-config-turbo": "^1.9.9",
+    "eslint-config-turbo": "^1.10.1",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-security": "^1.7.1",
     "prettier-plugin-tailwindcss": "^0.3.0"

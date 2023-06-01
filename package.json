@@ -12,15 +12,15 @@
     "update-dependencies": "pnpx npm-check-updates@latest -u && turbo update-dependencies"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.6.3",
-    "@commitlint/config-conventional": "^17.6.3",
-    "@changesets/cli": "^2.25.2",
-    "eslint": "^8.29.0",
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
+    "@changesets/cli": "^2.26.1",
+    "eslint": "^8.41.0",
     "eslint-config-adama": "workspace:*",
-    "prettier": "^2.8.0",
+    "prettier": "^2.8.8",
     "husky": "^8.0.3",
     "prettier-plugin-tailwindcss": "^0.3.0",
-    "turbo": "^1.9.9"
+    "turbo": "^1.10.1"
   },
   "packageManager": "pnpm@8.6.0"
 }
