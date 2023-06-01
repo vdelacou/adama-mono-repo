@@ -1,0 +1,4 @@
+
+> @adama/components-app-ui@ lint /Users/loreal/Documents/CODE/mono-repo/adama-mono-repo/packages/adama-components/app-ui
+> eslint "src/**/*.ts*"
+

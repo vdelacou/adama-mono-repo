@@ -1,0 +1,58 @@
+
+> @adama/docs@0.0.0 build /Users/loreal/Documents/CODE/mono-repo/adama-mono-repo/apps/adama-storybook
+> storybook build --docs
+
+@storybook/cli v7.0.18
+
+info => Cleaning outputDir: /storybook-static
+info => Loading presets
+info => Building manager..
+info => Manager built (167 ms)
+info => Copying static files: /Users/loreal/Documents/CODE/mono-repo/adama-mono-repo/node_modules/@storybook/manager/static at /Users/loreal/Documents/CODE/mono-repo/adama-mono-repo/apps/adama-storybook/storybook-static/sb-common-assets
+vite v4.3.9 building for production...
+
+./sb-common-assets/fonts.css doesn't exist at build time, it will remain unchanged to be resolved at runtime
+transforming...
+Use of eval in "../../node_modules/telejson/dist/index.mjs" is strongly discouraged as it poses security risks and may cause issues with minification.
+Use of eval in "../../node_modules/telejson/dist/index.mjs" is strongly discouraged as it poses security risks and may cause issues with minification.
+✓ 620 modules transformed.
+rendering chunks...
+computing gzip size...
+storybook-static/iframe.html                                          12.72 kB │ gzip:   3.56 kB
+storybook-static/assets/index-179954eb.css                             0.06 kB │ gzip:   0.06 kB
+storybook-static/assets/preview-a973300a.css                           5.44 kB │ gzip:   1.69 kB
+storybook-static/assets/preview-6a3cf694.js                            0.05 kB │ gzip:   0.07 kB │ map:     0.10 kB
+storybook-static/assets/index-d475d2ea.js                              0.21 kB │ gzip:   0.17 kB │ map:     0.78 kB
+storybook-static/assets/index-a99a88c4.js                              0.21 kB │ gzip:   0.18 kB │ map:     0.10 kB
+storybook-static/assets/DocsRenderer-EYKKDMVH-f02a293a.js              0.37 kB │ gzip:   0.24 kB │ map:     0.11 kB
+storybook-static/assets/WithTooltip-FBT32F6Q-8d02b23d.js               0.39 kB │ gzip:   0.25 kB │ map:     0.11 kB
+storybook-static/assets/syntaxhighlighter-QTQ2UBB4-08fb43a8.js         0.41 kB │ gzip:   0.27 kB │ map:     0.12 kB
+storybook-static/assets/button.stories-5a3d699f.js                     0.45 kB │ gzip:   0.31 kB │ map:     0.11 kB
+storybook-static/assets/preview-37f96eb3.js                            0.49 kB │ gzip:   0.32 kB │ map:     0.51 kB
+storybook-static/assets/index-bda0bad7.js                              0.53 kB │ gzip:   0.34 kB │ map:     4.23 kB
+storybook-static/assets/preview-5ef354f3.js                            0.69 kB │ gzip:   0.49 kB │ map:     3.75 kB
+storybook-static/assets/index-356e4a49.js                              0.81 kB │ gzip:   0.51 kB │ map:     3.21 kB
+storybook-static/assets/preview-b1164a2e.js                            0.88 kB │ gzip:   0.58 kB │ map:     2.79 kB
+storybook-static/assets/button.stories-f5458097.js                     1.50 kB │ gzip:   0.73 kB │ map:     2.07 kB
+storybook-static/assets/index-adcf3245.js                              1.52 kB │ gzip:   0.85 kB │ map:     2.87 kB
+storybook-static/assets/preview-a60aa466.js                            2.40 kB │ gzip:   1.25 kB │ map:    10.67 kB
+storybook-static/assets/index-d37d4223.js                              2.63 kB │ gzip:   1.30 kB │ map:     7.42 kB
+storybook-static/assets/preview-770cc08b.js                            3.22 kB │ gzip:   1.39 kB │ map:     9.94 kB
+storybook-static/assets/iframe-fe5c686b.js                             4.03 kB │ gzip:   1.58 kB │ map:     5.27 kB
+storybook-static/assets/preview-d8c963a4.js                            7.67 kB │ gzip:   1.60 kB │ map:    13.60 kB
+storybook-static/assets/index-ebeaab24.js                              7.88 kB │ gzip:   3.12 kB │ map:    15.60 kB
+storybook-static/assets/preview-2cd4e1a1.js                            8.00 kB │ gzip:   3.04 kB │ map:    28.01 kB
+storybook-static/assets/GlobalScrollAreaStyles-XIHNDKUY-a866d25d.js   10.37 kB │ gzip:   2.33 kB │ map:    15.68 kB
+storybook-static/assets/Color-3YIJY6X7-77ac9d1b.js                    30.99 kB │ gzip:  11.63 kB │ map:   112.01 kB
+storybook-static/assets/OverlayScrollbars-VAV6LJAB-5cad8f01.js        58.94 kB │ gzip:  25.27 kB │ map:   277.41 kB
+storybook-static/assets/config-6be196d2.js                           213.89 kB │ gzip:  66.61 kB │ map:   803.73 kB
+storybook-static/assets/index-01ca9bd1.js                            271.05 kB │ gzip:  84.83 kB │ map:   875.47 kB
+storybook-static/assets/chunk-PCJTTTQV-9179961b.js                   506.66 kB │ gzip: 166.86 kB │ map: 1,444.09 kB
+storybook-static/assets/formatter-S4K5WUZV-313d18f1.js               601.58 kB │ gzip: 185.02 kB │ map: 1,314.23 kB
+
+(!) Some chunks are larger than 500 kBs after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 8.44s
+info => Output directory: /Users/loreal/Documents/CODE/mono-repo/adama-mono-repo/apps/adama-storybook/storybook-static
