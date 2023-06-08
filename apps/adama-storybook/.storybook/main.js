@@ -15,6 +15,10 @@ module.exports = {
         alias: [{
           find: "@adama/components-app-ui",
           replacement: path.resolve(__dirname, "../../../packages/adama-components/app-ui")
+        },
+        {
+          find: "@adama/components-landing-page-ui",
+          replacement: path.resolve(__dirname, "../../../packages/adama-components/landing-page-ui")
         }]
       }
     };
