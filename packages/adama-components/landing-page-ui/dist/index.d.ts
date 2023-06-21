@@ -1,4 +1,13 @@
 import * as react_jsx_runtime from 'react/jsx-runtime';
+import Image from 'next/image';
+
+type BrandProps = React.ComponentProps<typeof Image> & {
+    alt: string;
+    src: string;
+    width?: number;
+    height?: number;
+};
+declare const Brand: ({ src, alt, width, height }: BrandProps) => react_jsx_runtime.JSX.Element;
 
 type ButtonProps = {
     children: React.ReactNode;
@@ -18,4 +27,4 @@ type CenteredCTATextProps = {
 };
 declare const CenteredCTAText: ({ title, description, }: CenteredCTATextProps) => react_jsx_runtime.JSX.Element;
 
-export { Button, CenteredCTAText, SectionWrapper };
+export { Brand, Button, CenteredCTAText, SectionWrapper };

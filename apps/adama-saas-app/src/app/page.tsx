@@ -1,8 +1,12 @@
+import { auth } from "@clerk/nextjs";
 
-export default function Home() {
+export default async function Page() {
+  const { orgId, orgSlug, userId } = auth();
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
-
+    <div className="flex">
+      {JSON.stringify(userId)}
+      {JSON.stringify(orgId)}
+      {JSON.stringify(orgSlug)}
     </div>
   );
 }

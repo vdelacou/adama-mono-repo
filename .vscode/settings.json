@@ -23,5 +23,5 @@
   },
   "editor.detectIndentation": false,
   "editor.tabSize": 2,
-  "prettier.configPath": "./packages/config/eslint-config-custom/prettier.config.js"
+  "prettier.configPath": "./packages/adama-config/adama-eslint-config/prettier.config.js"
 }

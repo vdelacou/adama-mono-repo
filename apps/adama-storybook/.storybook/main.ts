@@ -1,5 +1,7 @@
-const path = require("path");
-module.exports = {
+import type { StorybookConfig } from '@storybook/react-vite';
+import path from 'node:path';
+
+const config: StorybookConfig = {
   stories: ["../stories/**/*.stories.mdx", "../stories/**/*.stories.tsx"],
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
   framework: {
@@ -25,5 +27,8 @@ module.exports = {
   },
   docs: {
     autodocs: true
-  }
+  },
+  staticDirs: ['../public'],
 };
+
+export default config;
