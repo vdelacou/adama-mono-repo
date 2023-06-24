@@ -5,24 +5,19 @@
     "build": "turbo run build",
     "dev": "turbo run dev --no-cache --continue",
     "dev-components": "turbo run dev-components --no-cache --continue",
+    "test": "turbo run test",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
-    "changeset": "changeset",
-    "version-packages": "changeset version",
-    "release": "turbo run build --filter=docs^... && changeset publish",
-    "prepare": "husky install",
-    "update-dependencies": "pnpx npm-check-updates@latest -u && turbo update-dependencies"
+    "update-dependencies": "pnpx npm-check-updates@latest -u && turbo update-dependencies",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "eslint-config-adama": "workspace:*",
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
-    "@changesets/cli": "^2.26.1",
-    "eslint": "^8.42.0",
-    "eslint-config-adama": "workspace:*",
-    "prettier": "^2.8.8",
     "husky": "^8.0.3",
-    "prettier-plugin-tailwindcss": "^0.3.0",
-    "turbo": "^1.10.2"
+    "turbo": "^1.10.2",
+    "typescript": "^5.1.3"
   },
   "packageManager": "pnpm@8.6.0"
 }

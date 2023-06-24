@@ -1,11 +1,5 @@
 {
   "name": "@adama/tsconfig",
   "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "update-dependencies": "pnpx npm-check-updates@latest -u"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+  "private": true
 }

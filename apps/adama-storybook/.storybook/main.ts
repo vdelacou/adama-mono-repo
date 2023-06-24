@@ -2,7 +2,7 @@ import type { StorybookConfig } from '@storybook/react-vite';
 import path from 'node:path';
 
 const config: StorybookConfig = {
-  stories: ["../stories/**/*.stories.mdx", "../stories/**/*.stories.tsx"],
+  stories: ["../stories/**/*.stories.tsx"],
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
   framework: {
     name: "@storybook/react-vite",
@@ -14,14 +14,16 @@ const config: StorybookConfig = {
       ...config,
       define: { 'process.env': {} },
       resolve: {
-        alias: [{
+        alias: [
+          {
           find: "@adama/components-app-ui",
           replacement: path.resolve(__dirname, "../../../packages/adama-components/app-ui")
-        },
-        {
-          find: "@adama/components-landing-page-ui",
-          replacement: path.resolve(__dirname, "../../../packages/adama-components/landing-page-ui")
-        }]
+          },
+          {
+            find: "@adama/components-landing-page-ui",
+            replacement: path.resolve(__dirname, "../../../packages/adama-components/landing-page-ui")
+          }
+        ]
       }
     };
   },

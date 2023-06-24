@@ -186,10 +186,3 @@ Turborepo runs the `build` script for all publishable packages (excluding docs) 
 - Search and replace `acme` with your desired scope
 - Re-run `pnpm install`
 
-To publish packages to a private npm organization scope, **remove** the following from each of the `package.json`'s
-
-```diff
-- "publishConfig": {
--  "access": "public"
-- },
-```

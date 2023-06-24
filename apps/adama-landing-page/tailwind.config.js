@@ -1,6 +1,4 @@
-// tailwind config is required for editor support
-
-const sharedConfig = require("@adama/tailwind-config/tailwind.config.js");
+const sharedConfig = require('@adama/tailwind-config/tailwind.config.js');
 
 module.exports = {
   presets: [sharedConfig],

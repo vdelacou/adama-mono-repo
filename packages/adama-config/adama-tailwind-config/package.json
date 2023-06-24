@@ -2,14 +2,12 @@
   "name": "@adama/tailwind-config",
   "version": "1.0.0",
   "private": true,
-  "main": "index.js",
+  "main": "tailwind.config.js",
   "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules",
     "update-dependencies": "pnpx npm-check-updates@latest -u"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.2"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

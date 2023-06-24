@@ -4,18 +4,19 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules",
     "update-dependencies": "pnpx npm-check-updates@latest -u"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.59.9",
-    "eslint-config-next": "^13.4.4",
+    "eslint-config-next": "^13.4.7",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-config-turbo": "^1.10.2",
+    "eslint-config-turbo": "^1.10.6",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-security": "^1.7.1",
-    "prettier-plugin-tailwindcss": "^0.3.0"
-  },
-  "publishConfig": {
-    "access": "public"
+    "eslint-plugin-tailwindcss": "^3.12.1",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
+    "eslint": "^8.43.0"
   }
 }

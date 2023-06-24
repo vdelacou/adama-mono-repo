@@ -1,26 +1,41 @@
 module.exports = {
   extends: [
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:security/recommended",
-    "plugin:@next/next/recommended",
-    "prettier",
-    "turbo",
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:security/recommended',
+    'plugin:prettier/recommended',
+    'plugin:react/recommended',
+    'plugin:@next/next/recommended',
+    'plugin:tailwindcss/recommended',
+    'turbo',
   ],
-  parser: "@typescript-eslint/parser",
-  plugins: ["react", "@typescript-eslint", "react-hooks"],
+  parser: '@typescript-eslint/parser',
+  plugins: ['react', 'react-hooks', '@typescript-eslint'],
   rules: {
-    "@next/next/no-html-link-for-pages": "off",
-    "react/react-in-jsx-scope": "off",
-    "no-multiple-empty-lines": ["error", { max: 1 }],
+    '@next/next/no-html-link-for-pages': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'prettier/prettier': [
+      1,
+      {
+        endOfLine: 'lf',
+        printWidth: 180,
+        semi: true,
+        singleQuote: true,
+        tabWidth: 2,
+        trailingComma: 'es5',
+      },
+    ],
   },
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       typescript: {},
     },
     react: {
-      version: "18",
+      version: '18',
     },
   },
-  ignorePatterns: ["prettier.config.js", "tailwind.config.js"],
+  env: {
+    node: true,
+  },
+  ignorePatterns: ['tailwind.config.js'],
 };

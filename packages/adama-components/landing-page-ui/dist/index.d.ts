@@ -25,6 +25,22 @@ type CenteredCTATextProps = {
     title: string;
     description: string;
 };
-declare const CenteredCTAText: ({ title, description, }: CenteredCTATextProps) => react_jsx_runtime.JSX.Element;
+declare const CenteredCTAText: ({ title, description }: CenteredCTATextProps) => react_jsx_runtime.JSX.Element;
 
-export { Brand, Button, CenteredCTAText, SectionWrapper };
+declare const DesktopStaticSidebar: () => react_jsx_runtime.JSX.Element;
+
+type NavHeaderProps = {
+    onClick: () => void;
+    state: boolean;
+    brandProps: {
+        alt: string;
+        src: string;
+        width?: number;
+        height?: number;
+    };
+};
+declare const NavHeader: ({ onClick, state, brandProps, }: NavHeaderProps) => react_jsx_runtime.JSX.Element;
+
+declare const classNames: (...classes: string[]) => string;
+
+export { Brand, Button, CenteredCTAText, DesktopStaticSidebar, NavHeader, SectionWrapper, classNames };

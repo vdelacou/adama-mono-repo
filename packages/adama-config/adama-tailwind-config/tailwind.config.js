@@ -1,16 +1,10 @@
-const colors = require("tailwindcss/colors");
-
 module.exports = {
   content: [
+    // app content
     `src/**/*.{ts,tsx}`,
+    // include packages if not transpiling
+    // "../../packages/**/*.{ts,tsx}",
   ],
-  theme: {
-    extend: {
-      colors: {
-        brandPrimary: colors.teal[500],
-        brandSecondary: colors.green[500],
-      },
-    },
-  },
+  theme: {},
   plugins: [],
 };

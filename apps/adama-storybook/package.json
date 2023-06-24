@@ -1,12 +1,11 @@
 {
-  "name": "@adama/docs",
+  "name": "@adama/storybook",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "storybook dev -p 6006",
-    "dev-components": "storybook dev -p 6006",
     "build": "storybook build --docs",
-    "preview-storybook": "serve storybook-static",
+    "dev-components": "storybook dev -p 6006",
+    "lint": "eslint \"stories/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules",
     "update-dependencies": "pnpx npm-check-updates@latest -u"
   },
@@ -29,7 +28,6 @@
     "eslint-plugin-storybook": "^0.6.12",
     "serve": "^14.2.0",
     "storybook": "^7.0.20",
-    "typescript": "^5.1.3",
     "vite": "^4.3.9"
   }
 }
