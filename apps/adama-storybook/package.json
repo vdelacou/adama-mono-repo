@@ -17,17 +17,17 @@
   },
   "devDependencies": {
     "@adama/tsconfig": "workspace:*",
-    "@storybook/addon-actions": "^7.0.20",
-    "@storybook/addon-docs": "^7.0.20",
-    "@storybook/addon-essentials": "^7.0.20",
-    "@storybook/addon-links": "^7.0.20",
-    "@storybook/react": "^7.0.20",
-    "@storybook/react-vite": "^7.0.20",
-    "@vitejs/plugin-react": "^4.0.0",
+    "@storybook/addon-actions": "^7.0.23",
+    "@storybook/addon-docs": "^7.0.23",
+    "@storybook/addon-essentials": "^7.0.23",
+    "@storybook/addon-links": "^7.0.23",
+    "@storybook/react": "^7.0.23",
+    "@storybook/react-vite": "^7.0.23",
+    "@vitejs/plugin-react": "^4.0.1",
     "eslint-config-adama": "workspace:*",
     "eslint-plugin-storybook": "^0.6.12",
     "serve": "^14.2.0",
-    "storybook": "^7.0.20",
+    "storybook": "^7.0.23",
     "vite": "^4.3.9"
   }
 }
