@@ -1,9 +1,7 @@
 "use strict";
 var __create = Object.create;
 var __defProp = Object.defineProperty;
-var __defProps = Object.defineProperties;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
 var __getProtoOf = Object.getPrototypeOf;
@@ -20,19 +18,6 @@ var __spreadValues = (a, b) => {
         __defNormalProp(a, prop, b[prop]);
     }
   return a;
-};
-var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-var __objRest = (source, exclude) => {
-  var target = {};
-  for (var prop in source)
-    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
-      target[prop] = source[prop];
-  if (source != null && __getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(source)) {
-      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
-        target[prop] = source[prop];
-    }
-  return target;
 };
 var __export = (target, all) => {
   for (var name in all)
@@ -60,10 +45,11 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 __export(src_exports, {
   Brand: () => Brand,
-  Button: () => Button,
   CenteredCTAText: () => CenteredCTAText,
-  DesktopStaticSidebar: () => DesktopStaticSidebar,
+  Hero: () => Hero,
+  NavBar: () => NavBar,
   NavHeader: () => NavHeader,
+  NavLink: () => NavLink,
   SectionWrapper: () => SectionWrapper,
   classNames: () => classNames
 });
@@ -74,13 +60,10 @@ var import_image = __toESM(require("next/image"));
 var import_jsx_runtime = require("react/jsx-runtime");
 var Brand = ({ src, alt, width, height }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_image.default, { src, alt, width: width != null ? width : 86, height: height != null ? height : 48, priority: true });
 
-// src/components/atoms/button/index.tsx
+// src/components/atoms/nav-link/index.tsx
+var import_link = __toESM(require("next/link"));
 var import_jsx_runtime2 = require("react/jsx-runtime");
-var Button = (_a) => {
-  var _b = _a, { children } = _b, props = __objRest(_b, ["children"]);
-  var _a2;
-  return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("button", __spreadProps(__spreadValues({ role: "button" }, props), { className: `${(_a2 = props.className) != null ? _a2 : ""} px-4 py-2.5 text-center text-sm font-medium duration-150`, children }));
-};
+var NavLink = ({ children, href, className, scroll }) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_link.default, { href, className: `rounded-full px-4 py-2.5 text-center duration-150 ${className != null ? className : ""}`, scroll: scroll ? scroll : true, children });
 
 // src/components/atoms/section-wrapper/index.tsx
 var import_jsx_runtime3 = require("react/jsx-runtime");
@@ -95,78 +78,124 @@ var CenteredCTAText = ({ title, description }) => {
   ] }) }) });
 };
 
+// src/components/atoms/gradient-wrapper/index.tsx
+var import_jsx_runtime5 = require("react/jsx-runtime");
+var GradientWrapper = ({ children, className, wrapperClassName }) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: `relative py-28 ${className || ""}`, children: [
+  /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+    "div",
+    {
+      className: `absolute top-12 m-auto h-[250px] max-w-3xl blur-[130px] ${wrapperClassName || ""}`,
+      style: {
+        background: "linear-gradient(108.49deg, rgba(152, 103, 240, 0.24) 23.1%, rgba(237, 78, 80, 0.06) 62.53%)"
+      }
+    }
+  ),
+  /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "relative", children })
+] });
+
+// src/components/molecules/hero/index.tsx
+var import_jsx_runtime6 = require("react/jsx-runtime");
+var Hero = ({ title, description, cta1, cta2 }) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("section", { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(GradientWrapper, { wrapperClassName: "inset-0", className: "mx-auto max-w-screen-xl px-4 text-gray-600 md:px-8", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "mx-auto max-w-4xl space-y-5 text-center", children: [
+  /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("h1", { className: "mx-auto text-4xl font-extrabold text-gray-800 sm:text-6xl", children: [
+    title.left,
+    " ",
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: " bg-gradient-to-r from-[#9867F0] to-[#ED4E50] bg-clip-text text-transparent", children: title.withGradient }),
+    " ",
+    title.right
+  ] }),
+  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: "mx-auto max-w-xl", children: description }),
+  /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex items-center justify-center gap-x-3 text-sm font-medium", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(NavLink, { href: cta1.href, className: "flex items-center gap-x-2 bg-blue-600 text-white hover:bg-blue-500 active:bg-blue-700 ", children: [
+      cta1.name,
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", className: "h-5 w-5", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+        "path",
+        {
+          fillRule: "evenodd",
+          d: "M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z",
+          clipRule: "evenodd"
+        }
+      ) })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(NavLink, { href: cta2.href, className: "flex items-center gap-x-2 text-gray-700 hover:text-gray-900", scroll: false, children: [
+      cta2.name,
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", className: "h-5 w-5", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+        "path",
+        {
+          fillRule: "evenodd",
+          d: "M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z",
+          clipRule: "evenodd"
+        }
+      ) })
+    ] })
+  ] })
+] }) }) });
+
+// src/components/molecules/nav-header/index.tsx
+var import_link2 = __toESM(require("next/link"));
+var import_jsx_runtime7 = require("react/jsx-runtime");
+var NavHeader = ({ mobileMenuButtonOnClick, open, brandProps }) => /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: "flex items-center justify-between py-5 md:block", children: [
+  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_link2.default, { href: "/", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Brand, __spreadValues({}, brandProps)) }),
+  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "md:hidden", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("button", { role: "button", className: "text-gray-500 hover:text-gray-800", onClick: () => mobileMenuButtonOnClick(), children: open ? /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("svg", { xmlns: "http://www.w3.org/2000/svg", className: "h-6 w-6", viewBox: "0 0 20 20", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+    "path",
+    {
+      fillRule: "evenodd",
+      d: "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z",
+      clipRule: "evenodd"
+    }
+  ) }) : /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("svg", { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", strokeWidth: 1.5, stroke: "currentColor", className: "h-6 w-6", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" }) }) }) })
+] });
+
+// src/components/organisms/nav-bar/index.tsx
+var import_link3 = __toESM(require("next/link"));
+var import_jsx_runtime8 = require("react/jsx-runtime");
+var NavBar = ({ navLinkProps, navHeaderProps, authProps }) => {
+  const { mobileMenuButtonOnClick, open, brandProps } = navHeaderProps;
+  return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("header", { className: "relative", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: "mx-auto max-w-screen-xl px-4 md:hidden md:px-8", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(NavHeader, { open, mobileMenuButtonOnClick, brandProps }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("nav", { className: `bg-white pb-5 md:static md:block md:text-sm ${open ? "absolute inset-x-4 top-2 z-20 rounded-xl border shadow-lg md:border-none md:shadow-none" : "hidden"}`, children: /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "mx-auto max-w-screen-xl items-center gap-x-20 px-4 md:flex md:px-8", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(NavHeader, { open, mobileMenuButtonOnClick, brandProps }),
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: `mt-8 flex-1 items-center text-gray-600 md:mt-0 md:flex md:font-medium ${open ? "block" : "hidden"} `, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("ul", { className: "items-center justify-center space-y-6 md:flex md:space-x-6 md:space-y-0", children: navLinkProps.map((item) => {
+          return /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("li", { className: "hover:text-gray-900", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_link3.default, { href: item.href, className: "block", scroll: false, children: item.name }) }, item.name);
+        }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "mt-6 flex-1 items-center justify-end gap-x-6 space-y-6 md:mt-0 md:flex md:space-y-0", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_link3.default, { href: authProps.signIn.href, className: "block hover:text-gray-900", children: authProps.signIn.name }),
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(
+            NavLink,
+            {
+              href: authProps.signUp.href,
+              className: "flex items-center justify-center gap-x-1 bg-gray-800 text-sm font-medium text-white hover:bg-gray-600 active:bg-gray-900 md:inline-flex",
+              children: [
+                authProps.signUp.name,
+                /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20", fill: "currentColor", className: "h-5 w-5", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+                  "path",
+                  {
+                    fillRule: "evenodd",
+                    d: "M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z",
+                    clipRule: "evenodd"
+                  }
+                ) })
+              ]
+            }
+          )
+        ] })
+      ] })
+    ] }) })
+  ] });
+};
+
 // src/utils/class_names/index.ts
 var classNames = (...classes) => {
   return classes.filter(Boolean).join(" ");
 };
-
-// src/components/molecules/desktop-static-sidebar/index.tsx
-var import_jsx_runtime5 = require("react/jsx-runtime");
-var navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
-  { name: "Documents", href: "#", current: false },
-  { name: "Reports", href: "#", current: false }
-];
-var DesktopStaticSidebar = () => {
-  return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: "flex h-16 shrink-0 items-center" }),
-    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("nav", { className: "flex flex-1 flex-col", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("ul", { role: "list", className: "flex flex-1 flex-col gap-y-7", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("ul", { role: "list", className: "-mx-2 space-y-1", children: navigation.map((item) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
-        "a",
-        {
-          href: item.href,
-          className: classNames(
-            item.current ? "bg-gray-50 text-indigo-600" : "text-gray-700 hover:text-indigo-600 hover:bg-gray-50",
-            "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-          ),
-          children: item.name
-        }
-      ) }, item.name)) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("li", { className: "-mx-6 mt-auto", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("a", { href: "#", className: "flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: "sr-only", children: "Your profile" }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { "aria-hidden": "true", children: "Tom Cook" })
-      ] }) })
-    ] }) })
-  ] }) });
-};
-
-// src/components/molecules/nav-header/index.tsx
-var import_link = __toESM(require("next/link"));
-var import_jsx_runtime6 = require("react/jsx-runtime");
-var NavHeader = ({
-  onClick,
-  state,
-  // menuBtnEl,
-  brandProps
-}) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: "flex items-center justify-between py-5 md:block", children: [
-  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_link.default, { href: "/", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Brand, __spreadValues({}, brandProps)) }),
-  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: "md:hidden", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
-    "button",
-    {
-      role: "button",
-      className: "text-gray-500 hover:text-gray-800",
-      onClick: () => onClick(),
-      children: state ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("svg", { xmlns: "http://www.w3.org/2000/svg", className: "h-6 w-6", viewBox: "0 0 20 20", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
-        "path",
-        {
-          fillRule: "evenodd",
-          d: "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z",
-          clipRule: "evenodd"
-        }
-      ) }) : /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("svg", { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", strokeWidth: 1.5, stroke: "currentColor", className: "h-6 w-6", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" }) })
-    }
-  ) })
-] });
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Brand,
-  Button,
   CenteredCTAText,
-  DesktopStaticSidebar,
+  Hero,
+  NavBar,
   NavHeader,
+  NavLink,
   SectionWrapper,
   classNames
 });

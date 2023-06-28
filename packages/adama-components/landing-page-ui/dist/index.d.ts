@@ -9,11 +9,13 @@ type BrandProps = React.ComponentProps<typeof Image> & {
 };
 declare const Brand: ({ src, alt, width, height }: BrandProps) => react_jsx_runtime.JSX.Element;
 
-type ButtonProps = {
+interface NavLinkProps {
     children: React.ReactNode;
+    href: string;
     className?: string;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
-declare const Button: ({ children, ...props }: ButtonProps) => react_jsx_runtime.JSX.Element;
+    scroll?: boolean;
+}
+declare const NavLink: ({ children, href, className, scroll }: NavLinkProps) => react_jsx_runtime.JSX.Element;
 
 type SectionWrapperProps = {
     children: React.ReactNode;
@@ -27,20 +29,50 @@ type CenteredCTATextProps = {
 };
 declare const CenteredCTAText: ({ title, description }: CenteredCTATextProps) => react_jsx_runtime.JSX.Element;
 
-declare const DesktopStaticSidebar: () => react_jsx_runtime.JSX.Element;
-
-type NavHeaderProps = {
-    onClick: () => void;
-    state: boolean;
-    brandProps: {
-        alt: string;
-        src: string;
-        width?: number;
-        height?: number;
+type HeroProps = {
+    title: {
+        right: string;
+        withGradient: string;
+        left: string;
+    };
+    description: string;
+    cta1: {
+        name: string;
+        href: string;
+    };
+    cta2: {
+        name: string;
+        href: string;
     };
 };
-declare const NavHeader: ({ onClick, state, brandProps, }: NavHeaderProps) => react_jsx_runtime.JSX.Element;
+declare const Hero: ({ title, description, cta1, cta2 }: HeroProps) => react_jsx_runtime.JSX.Element;
+
+type NavHeaderProps = {
+    mobileMenuButtonOnClick: () => void;
+    open: boolean;
+    brandProps: BrandProps;
+};
+declare const NavHeader: ({ mobileMenuButtonOnClick, open, brandProps }: NavHeaderProps) => react_jsx_runtime.JSX.Element;
+
+type NavBarProps = {
+    navHeaderProps: NavHeaderProps;
+    navLinkProps: {
+        name: string;
+        href: string;
+    }[];
+    authProps: {
+        signIn: {
+            name: string;
+            href: string;
+        };
+        signUp: {
+            name: string;
+            href: string;
+        };
+    };
+};
+declare const NavBar: ({ navLinkProps, navHeaderProps, authProps }: NavBarProps) => react_jsx_runtime.JSX.Element;
 
 declare const classNames: (...classes: string[]) => string;
 
-export { Brand, Button, CenteredCTAText, DesktopStaticSidebar, NavHeader, SectionWrapper, classNames };
+export { Brand, BrandProps, CenteredCTAText, Hero, HeroProps, NavBar, NavBarProps, NavHeader, NavHeaderProps, NavLink, NavLinkProps, SectionWrapper, classNames };

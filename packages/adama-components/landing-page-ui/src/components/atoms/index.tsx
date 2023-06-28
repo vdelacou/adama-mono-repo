@@ -1,3 +1,3 @@
 export * from './brand';
-export * from './button';
+export * from './nav-link';
 export * from './section-wrapper';

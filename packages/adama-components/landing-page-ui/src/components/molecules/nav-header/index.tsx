@@ -1,35 +1,19 @@
 import Link from 'next/link';
-import { Brand } from '../../atoms';
+import { Brand, BrandProps } from '../../atoms';
 
-type NavHeaderProps = {
-  onClick: () => void;
-  state: boolean;
-  // menuBtnEl?: React.RefObject<HTMLButtonElement>;
-  brandProps: {
-    alt: string;
-    src: string;
-    width?: number;
-    height?: number;
-  };
+export type NavHeaderProps = {
+  mobileMenuButtonOnClick: () => void;
+  open: boolean;
+  brandProps: BrandProps;
 };
-export const NavHeader = ({
-  onClick,
-  state,
-  // menuBtnEl,
-  brandProps,
-}: NavHeaderProps) => (
+export const NavHeader = ({ mobileMenuButtonOnClick, open, brandProps }: NavHeaderProps) => (
   <div className="flex items-center justify-between py-5 md:block">
     <Link href="/">
       <Brand {...brandProps} />
     </Link>
     <div className="md:hidden">
-      <button
-        role="button"
-        // ref={menuBtnEl ?? null}
-        className="text-gray-500 hover:text-gray-800"
-        onClick={() => onClick()}
-      >
-        {state ? (
+      <button role="button" className="text-gray-500 hover:text-gray-800" onClick={() => mobileMenuButtonOnClick()}>
+        {open ? (
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
             <path
               fillRule="evenodd"

@@ -1,4 +1,4 @@
-import { CenteredCTAText } from '@adama/components-landing-page-ui/src';
+import { CenteredCTAText } from '@adama/components-landing-page-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof CenteredCTAText> = {

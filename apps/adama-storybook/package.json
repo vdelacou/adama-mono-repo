@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "storybook build --docs",
-    "dev-components": "storybook dev -p 6006",
+    "dev-components": "storybook dev",
     "lint": "eslint \"stories/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules",
     "update-dependencies": "pnpx npm-check-updates@latest -u"
@@ -21,6 +21,7 @@
     "@storybook/addon-docs": "^7.0.23",
     "@storybook/addon-essentials": "^7.0.23",
     "@storybook/addon-links": "^7.0.23",
+    "@storybook/preview-api": "^7.0.24",
     "@storybook/react": "^7.0.23",
     "@storybook/react-vite": "^7.0.23",
     "@vitejs/plugin-react": "^4.0.1",

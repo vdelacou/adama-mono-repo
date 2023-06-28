@@ -186,3 +186,7 @@ Turborepo runs the `build` script for all publishable packages (excluding docs) 
 - Search and replace `acme` with your desired scope
 - Re-run `pnpm install`
 
+
+# TODO
+
+Make the popup of menu close when click outside of the popup
