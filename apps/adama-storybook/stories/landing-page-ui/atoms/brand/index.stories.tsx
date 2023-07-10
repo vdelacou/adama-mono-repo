@@ -1,5 +1,6 @@
 import { Brand } from '@adama/components-landing-page-ui/src';
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
 const meta: Meta<typeof Brand> = {
   title: 'landing-page/atoms/brand',
@@ -10,11 +11,9 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+/** Display the main logo */
 export const Primary: Story = {
   args: {
-    alt: 'Default Alt',
-    src: './logo.svg',
-    width: 86,
-    height: 48,
+    BrandImage: () => <img alt={'Default Alt'} src={'./logo.svg'} />,
   },
 };

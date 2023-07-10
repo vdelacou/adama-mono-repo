@@ -5,7 +5,6 @@ module.exports = {
     'plugin:security/recommended',
     'plugin:prettier/recommended',
     'plugin:react/recommended',
-    'plugin:@next/next/recommended',
     'plugin:tailwindcss/recommended',
     'turbo',
   ],

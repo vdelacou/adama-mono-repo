@@ -1,33 +1,29 @@
 import * as react_jsx_runtime from 'react/jsx-runtime';
-import Image from 'next/image';
+import { ComponentType, ImgHTMLAttributes, ReactElement, AnchorHTMLAttributes } from 'react';
 
-type BrandProps = React.ComponentProps<typeof Image> & {
-    alt: string;
-    src: string;
+type BrandProps = {
+    BrandImage: ComponentType<ImgHTMLAttributes<HTMLImageElement>>;
     width?: number;
     height?: number;
 };
-declare const Brand: ({ src, alt, width, height }: BrandProps) => react_jsx_runtime.JSX.Element;
-
-interface NavLinkProps {
-    children: React.ReactNode;
-    href: string;
-    className?: string;
-    scroll?: boolean;
-}
-declare const NavLink: ({ children, href, className, scroll }: NavLinkProps) => react_jsx_runtime.JSX.Element;
-
-type SectionWrapperProps = {
-    children: React.ReactNode;
-    className?: string;
-} & React.HTMLAttributes<HTMLElement>;
-declare const SectionWrapper: ({ children, className }: SectionWrapperProps) => react_jsx_runtime.JSX.Element;
+declare const Brand: ({ BrandImage, width, height }: BrandProps) => react_jsx_runtime.JSX.Element;
 
 type CenteredCTATextProps = {
     title: string;
     description: string;
 };
 declare const CenteredCTAText: ({ title, description }: CenteredCTATextProps) => react_jsx_runtime.JSX.Element;
+
+type NavHeaderProps = {
+    brand: ReactElement<{
+        children: ReactElement<{
+            props: BrandProps;
+        }>;
+    }>;
+    mobileMenuButtonOnClick: () => void;
+    open: boolean;
+};
+declare const NavHeader: ({ mobileMenuButtonOnClick, open, brand }: NavHeaderProps) => react_jsx_runtime.JSX.Element;
 
 type HeroProps = {
     title: {
@@ -38,36 +34,29 @@ type HeroProps = {
     description: string;
     cta1: {
         name: string;
-        href: string;
+        navLink: ComponentType<AnchorHTMLAttributes<HTMLAnchorElement>>;
     };
     cta2: {
         name: string;
-        href: string;
+        navLink: ComponentType<AnchorHTMLAttributes<HTMLAnchorElement>>;
     };
 };
 declare const Hero: ({ title, description, cta1, cta2 }: HeroProps) => react_jsx_runtime.JSX.Element;
-
-type NavHeaderProps = {
-    mobileMenuButtonOnClick: () => void;
-    open: boolean;
-    brandProps: BrandProps;
-};
-declare const NavHeader: ({ mobileMenuButtonOnClick, open, brandProps }: NavHeaderProps) => react_jsx_runtime.JSX.Element;
 
 type NavBarProps = {
     navHeaderProps: NavHeaderProps;
     navLinkProps: {
         name: string;
-        href: string;
+        Link: ComponentType<AnchorHTMLAttributes<HTMLAnchorElement>>;
     }[];
     authProps: {
         signIn: {
             name: string;
-            href: string;
+            Link: ComponentType<AnchorHTMLAttributes<HTMLAnchorElement>>;
         };
         signUp: {
             name: string;
-            href: string;
+            Link: ComponentType<AnchorHTMLAttributes<HTMLAnchorElement>>;
         };
     };
 };
@@ -75,4 +64,4 @@ declare const NavBar: ({ navLinkProps, navHeaderProps, authProps }: NavBarProps)
 
 declare const classNames: (...classes: string[]) => string;
 
-export { Brand, BrandProps, CenteredCTAText, Hero, HeroProps, NavBar, NavBarProps, NavHeader, NavHeaderProps, NavLink, NavLinkProps, SectionWrapper, classNames };
+export { Brand, BrandProps, CenteredCTAText, Hero, HeroProps, NavBar, NavBarProps, NavHeader, NavHeaderProps, classNames };

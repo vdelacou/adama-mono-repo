@@ -1,0 +1,25 @@
+{
+  "folders": [
+    {
+      "name": "ROOT",
+      "path": "../"
+    },
+    {
+      "name": "apps",
+      "path": "../apps"
+    },
+    {
+      "name": "packages/adama-components",
+      "path": "../packages/adama-components"
+    },
+    {
+      "name": "packages/adama-config",
+      "path": "../packages/adama-config"
+    },
+    {
+      "name": "packages/adama-core",
+      "path": "../packages/adama-core"
+    }
+  ],
+  "settings": {}
+}

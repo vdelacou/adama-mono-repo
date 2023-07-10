@@ -1,8 +1,0 @@
-{
-  "extends": "@adama/tsconfig/node.json",
-  "include": ["**/*.ts", "tsup.config.ts"],
-  "exclude": ["node_modules"],
-  "compilerOptions": {
-    "types": ["vitest/globals"]
-  }
-}

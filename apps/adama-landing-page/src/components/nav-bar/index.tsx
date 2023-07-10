@@ -1,26 +1,29 @@
 'use client';
-import { NavBar, NavBarProps } from '@adama/components-landing-page-ui';
-import { useState } from 'react';
+import { Brand, NavBar, NavBarProps } from '@adama/components-landing-page-ui';
+import Image from 'next/image';
+import Link from 'next/link';
+import { PropsWithChildren, useState } from 'react';
+
+const CustomLink = ({ children }: PropsWithChildren) => <Link href={'#'}>{children}</Link>;
 
 const navBarProps: NavBarProps = {
   navHeaderProps: {
     mobileMenuButtonOnClick: () => undefined,
     open: false,
-    brandProps: {
-      alt: 'Default Alt',
-      src: './logo.svg',
-      width: 86,
-      height: 48,
-    },
+    brand: (
+      <Link href={'/'}>
+        <Brand BrandImage={() => <Image alt={'Default Alt'} src={'./logo.svg'} width={86} height={48} />} />
+      </Link>
+    ),
   },
   navLinkProps: [
-    { name: 'Features', href: '#' },
-    { name: 'Pricing', href: '#' },
-    { name: 'FAQs', href: '#' },
+    { name: 'Features', Link: CustomLink },
+    { name: 'Pricing', Link: CustomLink },
+    { name: 'FAQs', Link: CustomLink },
   ],
   authProps: {
-    signIn: { name: 'Sign in', href: '#' },
-    signUp: { name: 'Get started', href: '#' },
+    signIn: { name: 'Sign in', Link: CustomLink },
+    signUp: { name: 'Get started', Link: CustomLink },
   },
 };
 export const NavbarApp = () => {

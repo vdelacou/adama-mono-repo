@@ -1,16 +1,14 @@
-import Link from 'next/link';
-import { Brand, BrandProps } from '../../atoms';
+import { ReactElement } from 'react';
+import { BrandProps } from '../../atoms';
 
 export type NavHeaderProps = {
+  brand: ReactElement<{ children: ReactElement<{ props: BrandProps }> }>;
   mobileMenuButtonOnClick: () => void;
   open: boolean;
-  brandProps: BrandProps;
 };
-export const NavHeader = ({ mobileMenuButtonOnClick, open, brandProps }: NavHeaderProps) => (
-  <div className="flex items-center justify-between py-5 md:block">
-    <Link href="/">
-      <Brand {...brandProps} />
-    </Link>
+export const NavHeader = ({ mobileMenuButtonOnClick, open, brand }: NavHeaderProps) => (
+  <div className="flex items-center justify-between py-5 md:block ">
+    {brand}
     <div className="md:hidden">
       <button role="button" className="text-gray-500 hover:text-gray-800" onClick={() => mobileMenuButtonOnClick()}>
         {open ? (

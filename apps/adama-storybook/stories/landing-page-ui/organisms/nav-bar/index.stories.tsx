@@ -1,7 +1,7 @@
-import { NavBar } from '@adama/components-landing-page-ui';
+import { Brand, NavBar } from '@adama/components-landing-page-ui';
 import { useArgs } from '@storybook/preview-api';
 import type { Meta, StoryObj } from '@storybook/react';
-import React, { FC } from 'react';
+import React, { FC, PropsWithChildren } from 'react';
 
 const meta: Meta<typeof NavBar> = {
   title: 'landing-page/organisms/nav-bar',
@@ -34,21 +34,16 @@ export const Primary: Story = {
     navHeaderProps: {
       mobileMenuButtonOnClick: () => undefined,
       open: false,
-      brandProps: {
-        alt: 'Default Alt',
-        src: './logo.svg',
-        width: 86,
-        height: 48,
-      },
+      brand: <Brand BrandImage={() => <img alt={'Default Alt'} src={'./logo.svg'} />} />,
     },
     navLinkProps: [
-      { name: 'Features', href: '#' },
-      { name: 'Pricing', href: '#' },
-      { name: 'FAQs', href: '#' },
+      { name: 'Features', Link: ({ children }: PropsWithChildren) => <a href={'#'}>{children}</a> },
+      { name: 'Pricing', Link: ({ children }: PropsWithChildren) => <a href={'#'}>{children}</a> },
+      { name: 'FAQs', Link: ({ children }: PropsWithChildren) => <a href={'#'}>{children}</a> },
     ],
     authProps: {
-      signIn: { name: 'Sign in', href: '#' },
-      signUp: { name: 'Get started', href: '#' },
+      signIn: { name: 'Sign in', Link: ({ children }: PropsWithChildren) => <a href={'#'}>{children}</a> },
+      signUp: { name: 'Get started', Link: ({ children }: PropsWithChildren) => <a href={'#'}>{children}</a> },
     },
   },
 };

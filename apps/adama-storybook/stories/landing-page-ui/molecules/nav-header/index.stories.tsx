@@ -1,4 +1,4 @@
-import { NavHeader } from '@adama/components-landing-page-ui';
+import { Brand, NavHeader } from '@adama/components-landing-page-ui';
 import { useArgs } from '@storybook/preview-api';
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { FC } from 'react';
@@ -20,16 +20,12 @@ const ComponentRender: FC = (args) => {
 
 type Story = StoryObj<typeof meta>;
 
+/** On Mobile a menu will happens. Can click on the logo */
 export const Primary: Story = {
   render: ComponentRender,
   args: {
     mobileMenuButtonOnClick: () => undefined,
     open: false,
-    brandProps: {
-      alt: 'Default Alt',
-      src: './logo.svg',
-      width: 86,
-      height: 48,
-    },
+    brandLink: <Brand BrandImage={() => <img alt={'Default Alt'} src={'./logo.svg'} />} />,
   },
 };

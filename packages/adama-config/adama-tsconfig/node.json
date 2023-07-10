@@ -3,12 +3,15 @@
   "display": "Node",
   "extends": "./base.json",
   "compilerOptions": {
-    "lib": [ "esnext"],
+    "lib": [
+      "esnext"
+    ],
     "module": "commonjs",
     "target": "esnext",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
   }
 }

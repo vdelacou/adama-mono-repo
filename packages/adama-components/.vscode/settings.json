@@ -28,13 +28,16 @@
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.formatOnType": true,
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[postcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "files.exclude": {
     "**/node_modules": true
