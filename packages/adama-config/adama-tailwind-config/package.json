@@ -8,6 +8,6 @@
     "update-dependencies": "pnpx npm-check-updates@latest -u"
   },
   "devDependencies": {
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.3"
   }
 }

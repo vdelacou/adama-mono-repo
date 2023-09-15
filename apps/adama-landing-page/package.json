@@ -10,7 +10,7 @@
     "update-dependencies": "pnpx npm-check-updates@latest -u"
   },
   "dependencies": {
-    "next": "^13.4.9",
+    "next": "^13.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "@adama/components-landing-page-ui": "workspace:*"
@@ -18,9 +18,9 @@
   "devDependencies": {
     "@adama/tsconfig": "workspace:*",
     "eslint-config-adama": "workspace:*",
-    "@types/node": "^20.4.1",
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
-    "eslint-config-next": "^13.4.9"
+    "@types/node": "^20.6.0",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "eslint-config-next": "^13.4.19"
   }
 }

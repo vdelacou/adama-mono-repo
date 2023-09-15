@@ -1,4 +1,4 @@
-import { Brand, NavHeader } from '@adama/components-landing-page-ui';
+import { NavHeader } from '@adama/components-landing-page-ui';
 import { useArgs } from '@storybook/preview-api';
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { FC } from 'react';
@@ -26,6 +26,6 @@ export const Primary: Story = {
   args: {
     mobileMenuButtonOnClick: () => undefined,
     open: false,
-    brandLink: <Brand BrandImage={() => <img alt={'Default Alt'} src={'./logo.svg'} />} />,
+    // brandLink: <Brand BrandImage={() => <img alt={'Default Alt'} src={'./logo.svg'} />} />,
   },
 };
